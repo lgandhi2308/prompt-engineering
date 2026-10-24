@@ -1,99 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechNova Website</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-
-        header {
-            background-color: #14213d;
-            color: white;
-            padding: 25px;
-        }
-
-        nav {
-            background-color: #0077b6;
-            padding: 15px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 15px;
-        }
-
-        section {
-            padding: 50px 20px;
-        }
-
-        button {
-            background-color: #0077b6;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        footer {
-            background-color: #14213d;
-            color: white;
-            padding: 15px;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>College Event Hub</title>
+<style>
+:root{--navy:#0f2a55;--blue:#4f46e5;--blue2:#2563eb;--pale:#eef2ff;--ink:#18223a;--muted:#6b7794;--line:#e6eaf5;--bg:#f4f6fc;--card:#fff;--shadow:0 1px 2px #1b2a5a0d,0 8px 24px #1b2a5a0f;--shadow-lg:0 2px 4px #1b2a5a10,0 18px 40px #1b2a5a1f;--grad:linear-gradient(135deg,#4f46e5,#2563eb 60%,#0ea5e9)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'Plus Jakarta Sans',Inter,'Segoe UI',Arial,sans-serif;color:var(--ink);background:var(--bg);background-image:radial-gradient(900px 400px at 10% -5%,#dfe6ff80,transparent),radial-gradient(700px 400px at 100% 0,#d3f0ff70,transparent);background-attachment:fixed;-webkit-font-smoothing:antialiased}
+header{background:#0f1f4acc;backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);color:#fff;padding:0 5%;display:flex;align-items:center;gap:28px;min-height:68px;position:sticky;top:0;z-index:5;border-bottom:1px solid #ffffff1a}
+.brand{font-weight:800;white-space:nowrap;display:flex;align-items:center;gap:10px;letter-spacing:-.3px;font-size:17px}.brand-mark{font-size:20px;width:38px;height:38px;border-radius:11px;background:var(--grad);display:grid;place-items:center;box-shadow:0 4px 14px #4f46e566}
+nav{display:flex;gap:4px;flex:1;justify-content:center;flex-wrap:wrap}nav button,.top-action{border:0;background:transparent;color:#c9d4f5;padding:10px 14px;border-radius:999px;cursor:pointer;font:600 14px inherit;font-family:inherit;transition:.2s}nav button:hover{background:#ffffff1c;color:#fff}nav button.active{background:#fff;color:#1e2a78;box-shadow:0 4px 14px #0003}.top-action{font-size:18px;width:40px;height:40px;padding:0;border:1px solid #ffffff30;border-radius:50%}.top-action:hover{background:#ffffff25}
+main{max-width:1250px;margin:auto;padding:28px 22px 56px}.page{display:none}.page.active{display:block;animation:pg .45s ease both}@keyframes pg{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.hero{position:relative;background:radial-gradient(500px 300px at 85% 10%,#22d3ee55,transparent),radial-gradient(500px 360px at 70% 100%,#a855f766,transparent),linear-gradient(120deg,#0f1f4a,#2b2f9e 55%,#3b5bdb);color:#fff;border-radius:26px;padding:56px 48px;min-height:320px;display:flex;align-items:center;justify-content:space-between;gap:25px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;border:1px solid #ffffff22;pointer-events:none}.hero:before{width:420px;height:420px;right:-90px;top:-120px;background:#ffffff08}.hero:after{width:260px;height:260px;right:90px;bottom:-130px;background:#ffffff0a}
+.hero>div{position:relative;z-index:1}.hero-pill{display:inline-block;background:#ffffff1f;border:1px solid #ffffff33;padding:7px 14px;border-radius:999px;font-size:12.5px;font-weight:700;margin-bottom:18px;backdrop-filter:blur(6px)}
+.hero h1{font-size:clamp(34px,5vw,58px);margin:0 0 14px;line-height:1.05;letter-spacing:-1.5px}.hero h1 em{font-style:normal;background:linear-gradient(90deg,#7dd3fc,#c4b5fd,#f9a8d4);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:#d6e0ff;max-width:560px;line-height:1.65;margin:0 0 26px}
+.search{display:flex;background:#fff;border-radius:16px;padding:6px;max-width:620px;box-shadow:0 14px 40px #0004}.search input{border:0;outline:0;padding:13px 14px;flex:1;min-width:0;font-size:15px;font-family:inherit;background:transparent;color:var(--ink)}
+.hero-stats{display:flex;gap:30px;margin-top:28px;flex-wrap:wrap}.hero-stats b{display:block;font-size:26px;letter-spacing:-.5px}.hero-stats span{font-size:12.5px;color:#b9c8f5}
+.btn{border:0;background:var(--grad);color:#fff;border-radius:12px;padding:12px 18px;font:700 14px inherit;font-family:inherit;cursor:pointer;transition:.2s;box-shadow:0 6px 16px #4f46e540}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px #4f46e55a}.btn:active{transform:none}.btn.light{background:var(--pale);color:#3730a3;box-shadow:none}.btn.light:hover{background:#e0e7ff}.btn.outline{background:#fff;color:#3730a3;border:1px solid #d5dcf5;box-shadow:none}.btn.outline:hover{border-color:#a5b4fc;background:#f8f9ff}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:34px 0 16px}.section-head h2{font-size:24px;margin:0;letter-spacing:-.5px}.text-btn{color:var(--blue);background:none;border:0;cursor:pointer;font:700 14px inherit;font-family:inherit}.text-btn:hover{text-decoration:underline}
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin:26px 0 8px}.cat{border:1px solid var(--line);background:var(--card);border-radius:18px;padding:18px 8px;text-align:center;cursor:pointer;font:700 14px inherit;font-family:inherit;color:var(--ink);box-shadow:var(--shadow);transition:.25s}.cat span{display:grid;place-items:center;width:50px;height:50px;margin:0 auto 10px;border-radius:15px;font-size:24px;background:var(--c,#eef2ff);transition:.25s}
+.cat:nth-child(1){--c:#e0e7ff}.cat:nth-child(2){--c:#dbeafe}.cat:nth-child(3){--c:#fce7f3}.cat:nth-child(4){--c:#d1fae5}.cat:nth-child(5){--c:#f3e8ff}.cat:nth-child(6){--c:#fef3c7}
+.cat:hover,.cat.selected{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#a5b4fc}.cat:hover span{transform:scale(1.1) rotate(-4deg)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.event-card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.3s;animation:up .5s ease both}.event-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}.event-card:nth-child(2){animation-delay:.06s}.event-card:nth-child(3){animation-delay:.12s}.event-card:nth-child(4){animation-delay:.18s}@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.cover{position:relative;background:var(--g);display:grid;place-items:center;overflow:hidden;height:160px}.cover:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,#ffffff40,transparent 45%),radial-gradient(circle at 90% 100%,#00000030,transparent 50%)}.cover:after{content:"";position:absolute;width:190px;height:190px;border:28px solid #ffffff1c;border-radius:50%;right:-50px;bottom:-70px}.cover span{position:relative;z-index:1;font-size:56px;filter:drop-shadow(0 8px 14px #0004);transition:.4s}.event-card:hover .cover span{transform:scale(1.15) rotate(-6deg)}
+.cover.lg{height:100%;min-height:280px;border-radius:16px}.cover.lg span{font-size:96px}.cover.sm{width:72px;height:60px;border-radius:12px;flex-shrink:0}.cover.sm span{font-size:26px}.cover.sm:after{display:none}
+.badge{position:absolute;top:12px;left:12px;z-index:2;background:#fff;color:var(--ink);border-radius:12px;padding:6px 10px;text-align:center;line-height:1.1;box-shadow:0 6px 14px #0003}.badge b{display:block;font-size:18px}.badge small{font-size:10.5px;font-weight:800;color:var(--blue);text-transform:uppercase;letter-spacing:.5px}
+.event-content{padding:18px;display:flex;flex-direction:column;gap:9px;flex:1}.event-content .btn{width:100%}.event-content .btn+.btn{margin-top:-2px}.event-content .btn.light{margin-top:auto}
+.tag{font-size:11px;font-weight:800;padding:5px 11px;border-radius:999px;background:#e0e7ff;color:#4338ca;display:inline-block;align-self:flex-start;letter-spacing:.2px}.tag.Hackathon{background:#e0e7ff;color:#4338ca}.tag.Workshop{background:#dbeafe;color:#1d4ed8}.tag.Cultural{background:#fce7f3;color:#be185d}.tag.Sports{background:#d1fae5;color:#047857}.tag.Seminar{background:#f3e8ff;color:#7e22ce}.tag.Competition{background:#fef3c7;color:#b45309}
+.event-card h3{margin:0;font-size:18px;letter-spacing:-.3px}.meta{font-size:12.5px;color:var(--muted);display:flex;gap:7px;align-items:center}
+.filters-layout{display:grid;grid-template-columns:240px 1fr;gap:24px;align-items:start}.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}.filters-layout .panel{position:sticky;top:90px}.panel h3{margin:0 0 17px}.filter-group{border-top:1px solid var(--line);padding:15px 0}.filter-group label{display:flex;gap:9px;margin:10px 0;font-size:14px;color:#44536a;cursor:pointer}.filter-group input{accent-color:var(--blue)}
+select,input[type=text],input[type=email],input[type=number],input[type=date],.form-row input,.form-row select{padding:12px 14px;border:1px solid #dbe1f3;border-radius:12px;width:100%;font:inherit;background:#fff;color:var(--ink);transition:.2s}select:focus,input:focus{outline:0;border-color:#818cf8;box-shadow:0 0 0 4px #6366f11f}
+.event-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:12px}.empty{padding:44px;text-align:center;color:var(--muted);background:#fff;border:1.5px dashed #c7d0ea;border-radius:20px;grid-column:1/-1}
+.detail-hero{display:grid;grid-template-columns:1fr 1fr;gap:28px;background:#fff;padding:24px;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}.detail-hero h1{margin:12px 0;font-size:34px;letter-spacing:-1px}.detail-hero .btn{margin-right:6px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0}.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;font-size:13px;color:var(--muted);box-shadow:var(--shadow)}.stat b{display:block;margin-top:7px;color:var(--ink);font-size:15px}
+.calendar-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:22px}.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}.day,.dow{padding:11px 0;border-radius:12px;font-size:13px}.dow{font-weight:800;color:var(--muted)}.day{cursor:pointer;border:0;background:transparent;font-family:inherit;color:var(--ink);transition:.15s}.day:hover{background:#eef2ff}.day.has-event{background:#e0e7ff;color:#3730a3;font-weight:800}.day.chosen{background:var(--grad);color:#fff;box-shadow:0 6px 14px #4f46e54d}
+.list-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}.list-item:last-child{border:0}.list-item h4{margin:0 0 6px}
+.announcement{display:flex;gap:15px;padding:18px 0;border-bottom:1px solid var(--line)}.announcement:last-child{border:0}.announce-icon{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#e0e7ff,#cffafe);display:grid;place-items:center;font-size:21px;flex-shrink:0}.announcement h3{margin:0 0 6px;font-size:16px}.announcement p{margin:0;color:var(--muted);line-height:1.55;font-size:14px}
+.profile-grid{display:grid;grid-template-columns:260px 1fr;gap:22px}.avatar{width:92px;height:92px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-size:42px;margin-bottom:14px;box-shadow:0 10px 24px #4f46e54d;border:4px solid #fff;outline:1px solid var(--line)}.muted{color:var(--muted)}
+footer{text-align:center;color:#8d98b3;font-size:12px;padding:26px}
+.modal-backdrop{position:fixed;inset:0;background:#0b123599;backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:18px;z-index:10}.modal-backdrop.open{display:flex}.modal{background:#fff;border-radius:24px;width:min(520px,100%);max-height:90vh;overflow:auto;padding:28px;box-shadow:0 30px 80px #0a123a55;animation:pop .3s cubic-bezier(.2,.9,.3,1.2)}@keyframes pop{from{opacity:0;transform:scale(.92) translateY(14px)}to{opacity:1;transform:none}}
+.modal-head{display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0;letter-spacing:-.5px}.close{border:0;background:#eef1fa;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:18px;transition:.2s}.close:hover{background:#e0e5f5;transform:rotate(90deg)}.form-row{margin:14px 0}.form-row label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}.notice{display:none;background:#d1fae5;color:#065f46;padding:13px;border-radius:12px;margin:12px 0;font-weight:600}.notice.show{display:block}
+@media(max-width:850px){header{padding:10px 4%;gap:10px;flex-wrap:wrap}.brand{flex:1}nav{order:3;flex-basis:100%;overflow:auto;justify-content:flex-start;flex-wrap:nowrap}nav button{padding:9px 13px;white-space:nowrap}.categories{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.filters-layout{grid-template-columns:1fr}.filters-layout .panel{position:static}.detail-hero,.calendar-layout,.profile-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.cover.lg{min-height:200px}.hero{padding:40px 28px}}
+@media(max-width:520px){main{padding:17px 13px}.hero{padding:30px 20px;border-radius:20px}.hero-stats{gap:20px}.grid{grid-template-columns:1fr}.categories{gap:9px}.cat{padding:13px 4px;font-size:12px}.section-head h2{font-size:20px}.event-top{align-items:flex-start;flex-direction:column}.event-top input,.event-top select{max-width:none!important}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
 </head>
-
 <body>
-
-    <header>
-        <h1>Welcome to TechNova</h1>
-        <p>Innovating the Future with Technology</p>
-    </header>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <section id="home">
-        <h2>Explore TechNova</h2>
-        <p>Your journey towards innovation starts here.</p>
-        <button onclick="showMessage()">Get Started</button>
-    </section>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>TechNova provides creative and innovative technology solutions.</p>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <p>Web Development | Software Solutions | IT Support</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@technova.example</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 TechNova. All rights reserved.</p>
-    </footer>
-
-    <script>
-        function showMessage() {
-            alert("Welcome to TechNova!");
-        }
-    </script>
+<header>
+  <div class="brand"><span class="brand-mark">🎓</span> College Event Hub</div>
+  <nav aria-label="Main navigation">
+    <button class="active" data-page="home">Home</button><button data-page="events">Events</button><button data-page="calendar">Calendar</button><button data-page="my-events">My Events <span id="nav-count"></span></button><button data-page="announcements">Announcements</button><button data-page="profile">Profile</button>
+  </nav>
+  <button class="top-action" id="profile-shortcut" title="Profile">◉</button>
+</header>
+<main>
+<section class="page active" id="page-home">
+  <div class="hero"><div><span class="hero-pill">✨ Campus events, all in one place</span><h1>Explore. Participate.<br><em>Grow.</em></h1><p>Your one-stop platform for college events, competitions, workshops and more. Find your next opportunity to learn and connect.</p><div class="search"><input id="home-search" placeholder="Search events, workshops, hackathons..." aria-label="Search events"><button class="btn" id="search-btn">⌕ Search</button></div><div class="hero-stats"><div><b>8+</b><span>Live events</span></div><div><b>6</b><span>Categories</span></div><div><b>₹50K</b><span>Top prize pool</span></div></div></div></div>
+  <div class="categories">
+    <button class="cat" data-category="Hackathon"><span>💻</span>Hackathons</button><button class="cat" data-category="Workshop"><span>💡</span>Workshops</button><button class="cat" data-category="Cultural"><span>🎵</span>Cultural</button><button class="cat" data-category="Sports"><span>🏆</span>Sports</button><button class="cat" data-category="Seminar"><span>👥</span>Seminars</button><button class="cat" data-category="Competition"><span>⭐</span>Competitions</button>
+  </div>
+  <div class="section-head"><h2>Upcoming Events</h2><button class="text-btn" data-goto="events">View all →</button></div>
+  <div class="grid" id="home-events"></div>
+</section>
+<section class="page" id="page-events">
+  <div class="section-head"><h2>Explore all events</h2><span class="muted" id="result-count"></span></div>
+  <div class="filters-layout">
+    <aside class="panel"><h3>Filters</h3><div class="filter-group"><b>Event type</b><div id="type-filters"></div></div><div class="filter-group"><label for="mode-filter">Mode</label><select id="mode-filter"><option value="All">All modes</option><option>Offline</option><option>Online</option></select></div><button class="btn" id="apply-filters" style="width:100%">Apply filters</button><button class="text-btn" id="clear-filters" style="width:100%;margin-top:10px">Clear all</button></aside>
+    <div><div class="event-top"><input id="event-search" type="text" placeholder="Search by event name..." style="max-width:360px"><select id="sort-events" style="max-width:170px"><option value="date">Soonest first</option><option value="name">Name A–Z</option></select></div><div class="grid" id="all-events"></div></div>
+  </div>
+</section>
+<section class="page" id="page-detail"><button class="text-btn" data-goto="events">← Back to events</button><div id="detail-content" style="margin-top:16px"></div></section>
+<section class="page" id="page-calendar">
+  <div class="section-head"><h2>Event Calendar</h2><span class="muted">October 2026 · Demo calendar</span></div>
+  <div class="calendar-layout"><div class="panel"><div class="event-top"><button class="btn light" id="prev-month">←</button><h3 id="month-label" style="margin:0">October 2026</h3><button class="btn light" id="next-month">→</button></div><div class="calendar-grid" id="calendar-grid"></div></div><div class="panel"><h3 id="day-title">Events this month</h3><div id="calendar-events"></div></div></div>
+</section>
+<section class="page" id="page-my-events"><div class="section-head"><h2>My Events</h2><span class="muted">Your saved registrations</span></div><div class="panel"><div id="my-events-list"></div></div></section>
+<section class="page" id="page-announcements"><div class="section-head"><h2>Announcements</h2><span class="muted">Latest campus updates</span></div><div class="panel" id="announcement-list"></div></section>
+<section class="page" id="page-profile"><div class="section-head"><h2>My Profile</h2><button class="btn outline" id="edit-profile">Edit profile</button></div><div class="profile-grid"><div class="panel"><div class="avatar">👤</div><h2 id="profile-name-display" style="margin:0 0 6px">Student Name</h2><p class="muted" id="profile-course-display">Student · College</p><p class="muted">Manage your demo profile details here.</p></div><div class="panel"><h3>Personal information</h3><div class="form-row"><label>Full name</label><input id="profile-name" type="text" value="Student Name"></div><div class="form-row"><label>Email</label><input id="profile-email" type="email" value="student@example.com"></div><div class="form-row"><label>Department / course</label><input id="profile-course" type="text" value="Computer Science"></div><button class="btn" id="save-profile">Save profile</button><div id="profile-notice" class="notice">Profile saved in this browser.</div></div></div></section>
+</main>
+<footer>College Event Hub · Frontend prototype · Demo events and sample data</footer>
+<div class="modal-backdrop" id="register-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal"><div class="modal-head"><h2 id="modal-title">Register for event</h2><button class="close" id="close-modal" aria-label="Close">×</button></div><p class="muted" id="modal-event-name"></p><div id="register-notice" class="notice"></div><form id="register-form"><input type="hidden" id="register-event-id"><div class="form-row"><label for="full-name">Full name *</label><input id="full-name" required placeholder="Enter your full name"></div><div class="form-row"><label for="roll-no">College roll number *</label><input id="roll-no" required placeholder="Enter your roll number"></div><div class="form-row"><label for="department">Department *</label><select id="department" required><option value="">Select department</option><option>Computer Science</option><option>Electrical Engineering</option><option>Mechanical Engineering</option><option>Business / Management</option><option>Other</option></select></div><div class="form-row"><label for="team-size">Team members (including you)</label><select id="team-size"><option>1</option><option>2</option><option>3</option><option>4</option></select></div><button class="btn" type="submit" style="width:100%">Confirm registration</button></form></div></div>
+<script>
+const events=[
+{id:1,title:"TechNova Hackathon 2.0",type:"Hackathon",date:"2026-10-25",time:"9:00 AM – 5:00 PM",venue:"Main Auditorium",mode:"Offline",img:"assets/hackathon.jpg",desc:"A 24-hour hackathon to build innovative solutions for real-world problems. Team up, code, and win exciting prizes!",team:"1–4 members",eligibility:"All branches",prize:"₹50,000",organizer:"Computer Science Department"},
+{id:2,title:"Web Development Workshop",type:"Workshop",date:"2026-10-28",time:"10:00 AM – 1:00 PM",venue:"Computer Lab 2",mode:"Offline",img:"assets/workshop.jpg",desc:"Learn the fundamentals of responsive web development and build your first polished web page with guided practice.",team:"Individual",eligibility:"All students",prize:"Certificate",organizer:"Web Development Club"},
+{id:3,title:"Rangmanch – Drama Fest",type:"Cultural",date:"2026-10-30",time:"4:00 PM – 8:00 PM",venue:"Open Air Theater",mode:"Offline",img:"assets/cultural.jpg",desc:"Celebrate theatre, storytelling, and campus creativity with student performances and an evening of live entertainment.",team:"Individual / groups",eligibility:"All students",prize:"Trophies",organizer:"Cultural Committee"},
+{id:4,title:"Inter College Football",type:"Sports",date:"2026-11-02",time:"8:00 AM – 12:00 PM",venue:"Sports Ground",mode:"Offline",img:"assets/sports.jpg",desc:"Represent your college, show your teamwork, and compete in a friendly inter-college football tournament.",team:"Team event",eligibility:"Registered teams",prize:"Trophy",organizer:"Sports Committee"},
+{id:5,title:"Future of AI & ML",type:"Seminar",date:"2026-11-05",time:"11:00 AM – 1:00 PM",venue:"Seminar Hall",mode:"Offline",img:"assets/hackathon.jpg",desc:"Explore current AI and machine-learning applications, career pathways, and responsible technology with invited speakers.",team:"Individual",eligibility:"All branches",prize:"E-certificate",organizer:"AI/ML Society"},
+{id:6,title:"Code Wars",type:"Competition",date:"2026-11-10",time:"2:00 PM – 5:00 PM",venue:"Computer Lab 1",mode:"Offline",img:"assets/workshop.jpg",desc:"Test your problem-solving skills in a timed coding challenge with beginner and intermediate problem sets.",team:"1–2 members",eligibility:"All students",prize:"Prizes + certificates",organizer:"Coding Club"},
+{id:7,title:"Design Sprint",type:"Workshop",date:"2026-11-14",time:"10:00 AM – 12:30 PM",venue:"Innovation Studio",mode:"Online",img:"assets/cultural.jpg",desc:"Learn how to turn a problem into a user-friendly interface through a short design-thinking sprint.",team:"Individual",eligibility:"All students",prize:"Certificate",organizer:"Design Club"},
+{id:8,title:"Robotics Challenge",type:"Competition",date:"2026-11-18",time:"9:30 AM – 3:00 PM",venue:"Innovation Lab",mode:"Offline",img:"assets/sports.jpg",desc:"A hands-on challenge for teams to demonstrate creativity, engineering thinking, and prototype design.",team:"2–4 members",eligibility:"Engineering students",prize:"Awards",organizer:"Robotics Club"}
+];
+const announcements=[
+{icon:"📣",title:"TechNova Hackathon registration is open",desc:"Register early to reserve your place. Check the event details for team size and eligibility.",date:"24 Oct 2026"},
+{icon:"🗓️",title:"Workshop venue confirmed",desc:"The Web Development Workshop will take place in Computer Lab 2 on 28 October.",date:"23 Oct 2026"},
+{icon:"🎭",title:"Rangmanch – Drama Fest",desc:"Student performances are scheduled for the evening of 30 October at the Open Air Theater.",date:"22 Oct 2026"},
+{icon:"ℹ️",title:"Please check event requirements",desc:"Some competitions require team registration. Review the event details before signing up.",date:"20 Oct 2026"}
+];
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+let selectedCategory="", activeEvent=null, monthOffset=0;
+const readRegs=()=>{try{return JSON.parse(localStorage.getItem("cehRegs")||"[]")}catch(e){return[]}};
+const saveRegs=r=>{localStorage.setItem("cehRegs",JSON.stringify(r));updateCount()};
+const TYPE={Hackathon:["💻","#6366f1,#8b5cf6"],Workshop:["💡","#0ea5e9,#2563eb"],Cultural:["🎭","#ec4899,#f97316"],Sports:["⚽","#10b981,#0d9488"],Seminar:["🎤","#a855f7,#d946ef"],Competition:["🏆","#f59e0b,#ef4444"]};
+function cover(e,cls,badge){const t=TYPE[e.type]||TYPE.Hackathon,d=new Date(e.date+"T12:00:00");return `<div class="cover ${cls}" style="--g:linear-gradient(135deg,${t[1]})"><span>${t[0]}</span>${badge?`<div class="badge"><b>${d.getDate()}</b><small>${d.toLocaleDateString("en-IN",{month:"short"})}</small></div>`:""}</div>`}
+function formatDate(s){return new Date(s+"T12:00:00").toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"})}
+function card(e){return `<article class="event-card">${cover(e,"",true)}<div class="event-content"><span class="tag ${e.type}">${e.type}</span><h3>${e.title}</h3><div class="meta">▦ ${formatDate(e.date)} · ${e.time}</div><div class="meta">⌖ ${e.venue}</div><button class="btn light" onclick="openDetail(${e.id})">View details →</button><button class="btn" onclick="openRegister(${e.id})">${readRegs().includes(e.id)?"Registered ✓":"Register now"}</button></div></article>`}
+function renderHome(){const upcoming=events.slice().sort((a,b)=>a.date.localeCompare(b.date)).slice(0,4);$("#home-events").innerHTML=upcoming.map(card).join("")}
+function renderAll(){let q=$("#event-search").value.toLowerCase().trim();let types=$$("#type-filters input:checked").map(x=>x.value);let mode=$("#mode-filter").value;let arr=events.filter(e=>(!q||e.title.toLowerCase().includes(q)||e.type.toLowerCase().includes(q))&&(!types.length||types.includes(e.type))&&(mode==="All"||e.mode===mode));if($("#sort-events").value==="name")arr.sort((a,b)=>a.title.localeCompare(b.title));else arr.sort((a,b)=>a.date.localeCompare(b.date));$("#result-count").textContent=`${arr.length} event${arr.length===1?"":"s"}`;$("#all-events").innerHTML=arr.length?arr.map(card).join(""):`<div class="empty">No events match your filters. Try clearing a filter.</div>`}
+function go(page){$$(".page").forEach(p=>p.classList.remove("active"));$("#page-"+page).classList.add("active");$$("nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));if(page==="events")renderAll();if(page==="my-events")renderMyEvents();if(page==="calendar")renderCalendar();if(page==="announcements")renderAnnouncements();window.scrollTo({top:0,behavior:"smooth"})}
+function openDetail(id){activeEvent=events.find(e=>e.id===id);if(!activeEvent)return;const e=activeEvent;$("#detail-content").innerHTML=`<div class="detail-hero">${cover(e,"lg")}<div><span class="tag ${e.type}">${e.type}</span><h1>${e.title}</h1><p class="muted">${e.desc}</p><p>▦ <b>${formatDate(e.date)}</b> · ${e.time}</p><p>⌖ ${e.venue} · ${e.mode}</p><button class="btn" onclick="openRegister(${e.id})">${readRegs().includes(e.id)?"Registered ✓":"Register now"}</button> <button class="btn outline" onclick="shareEvent(${e.id})">Share</button></div></div><div class="stats"><div class="stat">👥 Team size<b>${e.team}</b></div><div class="stat">🎓 Eligibility<b>${e.eligibility}</b></div><div class="stat">🏆 Prize / reward<b>${e.prize}</b></div><div class="stat">🏫 Organized by<b>${e.organizer}</b></div></div><div class="panel"><h3>About this event</h3><p class="muted">${e.desc}</p><h3>Before you register</h3><p class="muted">Check the date, venue, eligibility, and team requirements. This prototype stores demo registrations in your browser only.</p></div>`;go("detail")}
+function openRegister(id){const e=events.find(x=>x.id===id);if(!e)return;$("#register-event-id").value=id;$("#modal-event-name").textContent=`${e.title} · ${formatDate(e.date)} · ${e.venue}`;$("#register-notice").className="notice";$("#register-notice").textContent="";$("#register-modal").classList.add("open")}
+function closeRegister(){$("#register-modal").classList.remove("open")}
+$("#close-modal").onclick=closeRegister;$("#register-modal").addEventListener("click",e=>{if(e.target.id==="register-modal")closeRegister()});
+$("#register-form").addEventListener("submit",e=>{e.preventDefault();const id=Number($("#register-event-id").value);let regs=readRegs();if(!regs.includes(id)){regs.push(id);saveRegs(regs)}$("#register-notice").textContent="Registration saved in this browser. This is a frontend demo; no college server was contacted.";$("#register-notice").className="notice show";renderHome();renderAll();setTimeout(()=>{closeRegister();if($("#page-my-events").classList.contains("active"))renderMyEvents()},1400)});
+function updateCount(){$("#nav-count").textContent=readRegs().length?`(${readRegs().length})`:""}
+function renderMyEvents(){const regs=readRegs();const chosen=events.filter(e=>regs.includes(e.id));$("#my-events-list").innerHTML=chosen.length?chosen.map(e=>`<div class="list-item">${cover(e,"sm")}<div style="flex:1"><h4>${e.title}</h4><div class="meta">${formatDate(e.date)} · ${e.venue}</div><span class="tag ${e.type}" style="margin-top:7px">Registered</span></div><button class="btn outline" onclick="openDetail(${e.id})">Details</button><button class="text-btn" onclick="cancelReg(${e.id})">Cancel</button></div>`).join(""):`<div class="empty">You haven't registered for an event yet.<br><br><button class="btn" onclick="go('events')">Explore events</button></div>`}
+function cancelReg(id){if(confirm("Remove this demo registration?")){saveRegs(readRegs().filter(x=>x!==id));renderMyEvents();renderAll();renderHome()}}
+function renderAnnouncements(){$("#announcement-list").innerHTML=announcements.map(a=>`<div class="announcement"><div class="announce-icon">${a.icon}</div><div style="flex:1"><h3>${a.title}</h3><p>${a.desc}</p></div><small class="muted">${a.date}</small></div>`).join("")}
+function renderCalendar(){const date=new Date(2026,9+monthOffset,1);const year=date.getFullYear(),month=date.getMonth();$("#month-label").textContent=date.toLocaleDateString("en-IN",{month:"long",year:"numeric"});const first=date.getDay(),days=new Date(year,month+1,0).getDate();let h=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map(x=>`<div class="dow">${x}</div>`).join("");for(let i=0;i<first;i++)h+="<div></div>";for(let d=1;d<=days;d++){const dateStr=`${year}-${String(month+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;const has=events.some(e=>e.date===dateStr);h+=`<button class="day ${has?"has-event":""}" data-date="${dateStr}">${d}${has?" •":""}</button>`}$("#calendar-grid").innerHTML=h;$$(".day[data-date]").forEach(b=>b.onclick=()=>showCalendarDay(b.dataset.date));showCalendarDay(`${year}-${String(month+1).padStart(2,"0")}-01`)}
+function showCalendarDay(d){$$(".day").forEach(b=>b.classList.toggle("chosen",b.dataset.date===d));const matches=events.filter(e=>e.date===d);$("#day-title").textContent=matches.length?`Events on ${formatDate(d)}`:`${formatDate(d)} · No events`;$("#calendar-events").innerHTML=matches.length?matches.map(e=>`<div class="list-item">${cover(e,"sm")}<div><h4>${e.title}</h4><div class="meta">${e.time}</div><div class="meta">${e.venue}</div><button class="text-btn" onclick="openDetail(${e.id})">View details →</button></div></div>`).join(""):`<p class="muted">No events scheduled for this date in the demo data.</p>`}
+$("#prev-month").onclick=()=>{monthOffset--;renderCalendar()};$("#next-month").onclick=()=>{monthOffset++;renderCalendar()};
+function shareEvent(id){const e=events.find(x=>x.id===id);const txt=`${e.title} — ${formatDate(e.date)} at ${e.venue}`;if(navigator.share)navigator.share({title:e.title,text:txt}).catch(()=>{});else if(navigator.clipboard)navigator.clipboard.writeText(txt).then(()=>alert("Event details copied."));else alert(txt)}
+$$("nav button").forEach(b=>b.addEventListener("click",()=>go(b.dataset.page)));$$("[data-goto]").forEach(b=>b.addEventListener("click",()=>go(b.dataset.goto)));
+$$(".cat").forEach(b=>b.addEventListener("click",()=>{selectedCategory=b.dataset.category;$("#event-search").value="";$$(".cat").forEach(x=>x.classList.toggle("selected",x===b));$$('#type-filters input').forEach(x=>x.checked=x.value===selectedCategory);go("events");renderAll()}));
+$("#search-btn").onclick=()=>{$("#event-search").value=$("#home-search").value;go("events");renderAll()};$("#home-search").addEventListener("keydown",e=>{if(e.key==="Enter")$("#search-btn").click()});$("#event-search").addEventListener("input",renderAll);$("#sort-events").addEventListener("change",renderAll);$("#apply-filters").onclick=renderAll;
+$("#clear-filters").onclick=()=>{$$("#type-filters input").forEach(x=>x.checked=false);$("#mode-filter").value="All";$("#event-search").value="";$$(".cat").forEach(x=>x.classList.remove("selected"));renderAll()};
+$("#type-filters").innerHTML=["Hackathon","Workshop","Cultural","Sports","Seminar","Competition"].map(t=>`<label><input type="checkbox" value="${t}"> ${t}</label>`).join("");
+$("#profile-shortcut").onclick=()=>go("profile");$("#edit-profile").onclick=()=>$("#profile-name").focus();
+$("#save-profile").onclick=()=>{const name=$("#profile-name").value.trim()||"Student Name";const course=$("#profile-course").value.trim()||"Student";$("#profile-name-display").textContent=name;$("#profile-course-display").textContent=course;localStorage.setItem("cehProfile",JSON.stringify({name,course,email:$("#profile-email").value}));$("#profile-notice").className="notice show"};
+function loadProfile(){try{const p=JSON.parse(localStorage.getItem("cehProfile")||"{}");if(p.name)$("#profile-name").value=p.name;if(p.course)$("#profile-course").value=p.course;if(p.email)$("#profile-email").value=p.email;$("#profile-name-display").textContent=$("#profile-name").value;$("#profile-course-display").textContent=$("#profile-course").value}catch(e){}}
+renderHome();renderAll();renderAnnouncements();updateCount();loadProfile();
+</script>
 </body>
 </html>
